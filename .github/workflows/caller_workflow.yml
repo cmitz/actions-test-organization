@@ -1,0 +1,12 @@
+name: Call a reusable workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  call_workflow_passing_data:
+    uses: ske-test-org/test-org-repo/.github/workflows/called.yml@eb61b6faa2375856203944a83ec2d04f329356c3
+    strategy:
+      matrix:
+        node: [10, 12, 14]
